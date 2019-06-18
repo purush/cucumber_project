@@ -1,0 +1,102 @@
+@mobile
+Feature: Using Android device check mobile DataConnection
+
+  Scenario Outline: Using Android device check mobile apn "<apnname>"  by visting UK site "<title>".
+    And Using Android device serialno "9885e6455836594c55" set apn "<apnname>"
+    And Using Android device serialno "9885e6455836594c55" open "chrome" browser
+    And open browser and enter url "<url>" and check if page loaded and contains page title "<title>"
+
+    Examples: 
+      | apnname                        | url                             | title    |
+      | isetup-serv-epg1               | https://www.bbc.co.uk/          | bbc      |
+      | isetup-serv-epg1-use-same-apn  | https://twitter.com/?lang=en-gb | twitter  |
+      | isetup-serv-epg1-use-same-apn  | https://www.ebay.co.uk/         | ebay     |
+      | isetup-serv-epg1-use-same-apn  | https://www.youtube.com/        | youtube  |
+      | isetup-serv-epg1-use-same-apn  | https://www.amazon.co.uk/       | amazon   |
+      | isetup-serv-epg1-use-same-apn  | https://www.reddit.com/         | reddit   |
+      | isetup-serv-epg1-use-same-apn  | http://xhaus.com/headers        | xhaus    |
+      | isetup-serv-epg1-use-same-apn  | https://google.co.uk            | google   |
+      | isetup-serv-epg1-use-same-apn  | https://google.com              | google   |
+      | isetup-serv-epg1-use-same-apn  | http://www.espn.co.uk/          | espn     |
+      | isetup-serv-epg1-use-same-apn  | https://www.dailymotion.com/    | daily    |
+      | isetup-serv-epg1-use-same-apn  | https://www.facebook.com/       | facebook |
+      | isetup-serv-epg2               | https://www.bbc.co.uk/          | bbc      |
+      | isetup-serv-epg2-use-same-apn  | https://twitter.com/?lang=en-gb | twitter  |
+      | isetup-serv-epg2-use-same-apn  | https://www.ebay.co.uk/         | ebay     |
+      | isetup-serv-epg2-use-same-apn  | https://www.youtube.com/        | youtube  |
+      | isetup-serv-epg2-use-same-apn  | https://www.amazon.co.uk/       | amazon   |
+      | isetup-serv-epg2-use-same-apn  | https://www.reddit.com/         | reddit   |
+      | isetup-serv-epg2-use-same-apn  | http://xhaus.com/headers        | xhaus    |
+      | isetup-serv-epg2-use-same-apn  | https://google.co.uk            | google   |
+      | isetup-serv-epg2-use-same-apn  | https://google.com              | google   |
+      | isetup-serv-epg2-use-same-apn  | http://www.espn.co.uk/          | espn     |
+      | isetup-serv-epg2-use-same-apn  | https://www.dailymotion.com/    | daily    |
+      | isetup-serv-epg2-use-same-apn  | https://www.facebook.com/       | facebook |
+      | ibrowse-serv-epg1              | https://www.bbc.co.uk/          | bbc      |
+      | ibrowse-serv-epg1-use-same-apn | https://twitter.com/?lang=en-gb | twitter  |
+      | ibrowse-serv-epg1-use-same-apn | https://www.ebay.co.uk/         | ebay     |
+      | ibrowse-serv-epg1-use-same-apn | https://www.youtube.com/        | youtube  |
+      | ibrowse-serv-epg1-use-same-apn | https://www.amazon.co.uk/       | amazon   |
+      | ibrowse-serv-epg1-use-same-apn | https://www.reddit.com/         | reddit   |
+      | ibrowse-serv-epg1-use-same-apn | http://xhaus.com/headers        | xhaus    |
+      | ibrowse-serv-epg1-use-same-apn | https://google.co.uk            | google   |
+      | ibrowse-serv-epg1-use-same-apn | https://google.com              | google   |
+      | ibrowse-serv-epg1-use-same-apn | http://www.espn.co.uk/          | espn     |
+      | ibrowse-serv-epg1-use-same-apn | https://www.dailymotion.com/    | daily    |
+      | ibrowse-serv-epg1-use-same-apn | https://www.facebook.com/       | facebook |
+      | ibrowse-serv-epg2              | https://www.bbc.co.uk/          | bbc      |
+      | ibrowse-serv-epg2-use-same-apn | https://twitter.com/?lang=en-gb | twitter  |
+      | ibrowse-serv-epg2-use-same-apn | https://www.ebay.co.uk/         | ebay     |
+      | ibrowse-serv-epg2-use-same-apn | https://www.youtube.com/        | youtube  |
+      | ibrowse-serv-epg2-use-same-apn | https://www.amazon.co.uk/       | amazon   |
+      | ibrowse-serv-epg2-use-same-apn | https://www.reddit.com/         | reddit   |
+      | ibrowse-serv-epg2-use-same-apn | http://xhaus.com/headers        | xhaus    |
+      | ibrowse-serv-epg2-use-same-apn | https://google.co.uk            | google   |
+      | ibrowse-serv-epg2-use-same-apn | https://google.com              | google   |
+      | ibrowse-serv-epg2-use-same-apn | http://www.espn.co.uk/          | espn     |
+      | ibrowse-serv-epg2-use-same-apn | https://www.dailymotion.com/    | daily    |
+      | ibrowse-serv-epg2-use-same-apn | https://www.facebook.com/       | facebook |
+      | wap-serv-epg1                  | https://www.bbc.co.uk/          | bbc      |
+      | wap-serv-epg1-use-same-apn     | https://twitter.com/?lang=en-gb | twitter  |
+      | wap-serv-epg1-use-same-apn     | https://www.ebay.co.uk/         | ebay     |
+      | wap-serv-epg1-use-same-apn     | https://www.youtube.com/        | youtube  |
+      | wap-serv-epg1-use-same-apn     | https://www.amazon.co.uk/       | amazon   |
+      | wap-serv-epg1-use-same-apn     | https://www.reddit.com/         | reddit   |
+      | wap-serv-epg1-use-same-apn     | http://xhaus.com/headers        | xhaus    |
+      | wap-serv-epg1-use-same-apn     | https://google.co.uk            | google   |
+      | wap-serv-epg1-use-same-apn     | https://google.com              | google   |
+      | wap-serv-epg1-use-same-apn     | http://www.espn.co.uk/          | espn     |
+      | wap-serv-epg1-use-same-apn     | https://www.dailymotion.com/    | daily    |
+      | wap-serv-epg1-use-same-apn     | https://www.facebook.com/       | facebook |
+      | wap-serv-epg2                  | https://www.bbc.co.uk/          | bbc      |
+      | wap-serv-epg2-use-same-apn     | https://twitter.com/?lang=en-gb | twitter  |
+      | wap-serv-epg2-use-same-apn     | https://www.ebay.co.uk/         | ebay     |
+      | wap-serv-epg2-use-same-apn     | https://www.youtube.com/        | youtube  |
+      | wap-serv-epg2-use-same-apn     | https://www.amazon.co.uk/       | amazon   |
+      | wap-serv-epg2-use-same-apn     | https://www.reddit.com/         | reddit   |
+      | wap-serv-epg2-use-same-apn     | http://xhaus.com/headers        | xhaus    |
+      | wap-serv-epg2-use-same-apn     | https://google.co.uk            | google   |
+      | wap-serv-epg2-use-same-apn     | https://google.com              | google   |
+      | wap-serv-epg2-use-same-apn     | http://www.espn.co.uk/          | espn     |
+      | wap-serv-epg2-use-same-apn     | https://www.dailymotion.com/    | daily    |
+      | wap-serv-epg2-use-same-apn     | https://www.facebook.com/       | facebook |
+      | vpn-serv-epg1                  | https://www.bbc.co.uk/          | bbc      |
+      | vpn-serv-epg1-use-same-apn     | https://twitter.com/?lang=en-gb | twitter  |
+      | vpn-serv-epg1-use-same-apn     | https://www.ebay.co.uk/         | ebay     |
+      | vpn-serv-epg1-use-same-apn     | https://www.youtube.com/        | youtube  |
+      | vpn-serv-epg1-use-same-apn     | https://www.amazon.co.uk/       | amazon   |
+      | vpn-serv-epg1-use-same-apn     | https://www.reddit.com/         | reddit   |
+      | vpn-serv-epg1-use-same-apn     | https://google.co.uk            | google   |
+      | vpn-serv-epg1-use-same-apn     | https://google.com              | google   |
+      | vpn-serv-epg1-use-same-apn     | https://www.dailymotion.com/    | daily    |
+      | vpn-serv-epg1-use-same-apn     | https://www.facebook.com/       | facebook |
+      | vpn-serv-epg2                  | https://www.bbc.co.uk/          | bbc      |
+      | vpn-serv-epg2-use-same-apn     | https://twitter.com/?lang=en-gb | twitter  |
+      | vpn-serv-epg2-use-same-apn     | https://www.ebay.co.uk/         | ebay     |
+      | vpn-serv-epg2-use-same-apn     | https://www.youtube.com/        | youtube  |
+      | vpn-serv-epg2-use-same-apn     | https://www.amazon.co.uk/       | amazon   |
+      | vpn-serv-epg2-use-same-apn     | https://www.reddit.com/         | reddit   |
+      | vpn-serv-epg2-use-same-apn     | https://google.co.uk            | google   |
+      | vpn-serv-epg2-use-same-apn     | https://google.com              | google   |
+      | vpn-serv-epg2-use-same-apn     | https://www.dailymotion.com/    | daily    |
+      | vpn-serv-epg2-use-same-apn     | https://www.facebook.com/       | facebook |

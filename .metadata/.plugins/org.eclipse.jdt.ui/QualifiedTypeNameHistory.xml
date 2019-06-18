@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="cucumber.api.java.en.Given"/>
+<fullyQualifiedTypeName name="io.appium.java_client.service.local.AppiumDriverLocalService"/>
+<fullyQualifiedTypeName name="io.appium.java_client.android.AndroidDriver"/>
+<fullyQualifiedTypeName name="io.appium.java_client.service.local.AppiumServiceBuilder"/>
+<fullyQualifiedTypeName name="io.appium.java_client.service.local.flags.GeneralServerFlag"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="cucumber.api.junit.Cucumber"/>
+<fullyQualifiedTypeName name="cucumber.api.CucumberOptions"/>
+<fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.remote.DesiredCapabilities"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="java.net.MalformedURLException"/>
+<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.support.ui.ExpectedConditions"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.support.ui.WebDriverWait"/>
+</qualifiedTypeNameHistroy>

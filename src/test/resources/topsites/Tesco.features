@@ -1,0 +1,26 @@
+@web
+Feature: Tesco website
+
+  Scenario: Check Links on the webpage
+    Given Go to Tesco mobile homepage
+    And wait 5 sec
+    And navigate to href "pay-as-you-go"
+    And Go to Tesco mobile homepage
+    And navigate to href "pay-monthly"
+    And Go to Tesco mobile homepage
+    And navigate to href "coverage-checker"
+    And Go to Tesco mobile homepage
+    And navigate to href "basket"
+    And Go to Tesco mobile homepage
+    And navigate to href "upgrade"
+
+  Scenario: Login to paymonthly
+    Given Go to Tesco mobile homepage
+    And wait 5 sec
+    And navigate to href "my-account"
+    And wait 5 sec
+    And navigate to url "https://paymonthly.tescomobile.com/orderentry/MyAccountLogIn.do"
+    And set field "user" with value "demouser"
+    And set field "password" with value "Passw0rd"
+    And wait 2 sec
+    And click button "LoginBtn"
