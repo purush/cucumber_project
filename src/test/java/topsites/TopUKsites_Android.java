@@ -1743,7 +1743,8 @@ public static boolean linkExists(String URLName){
 	        long timestamp = System.currentTimeMillis() / 1000L;
 
 	        String filename =null;
-	        filename = "/Users/purush/cukes/cucumber-project/output/screendumpfile-"+timestamp;
+	        // filename = "/Users/purush/cukes/cucumber-project/output/screendumpfile-"+timestamp;
+	        filename = "./output/screendumpfile-"+timestamp;
 	        System.out.println(" ##### Image file name ##### "+ filename);
 
 			screencap = "/Users/purush/Library/Android/sdk/platform-tools/adb -s " +  deviceno + " shell screencap -p /sdcard/screen.png ";
