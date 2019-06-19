@@ -115,7 +115,7 @@ public class TopUKsites_Android {
 	private static String Node_Path = "/usr/local/bin/node";
 	@SuppressWarnings("rawtypes")
 	AndroidDriver androiddriver;
-	int pageLoadTimeOut = 15;
+	int pageLoadTimeOut = 5;
 	WebDriverWait wait;
 	ChromeDriver driver = null;
 	int countrow = 0;
@@ -895,7 +895,7 @@ public static boolean linkExists(String URLName){
 
 			try
 			{
-					androiddriver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS );
+					androiddriver.manage().timeouts().pageLoadTimeout(pageLoadTimeOut, TimeUnit.SECONDS );
 					androiddriver.get(weburl);
 			}
 			catch ( Exception e)
