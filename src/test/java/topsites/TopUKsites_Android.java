@@ -1731,7 +1731,8 @@ public static boolean linkExists(String URLName){
 
 		//byte[] screenshotBytes = ((TakesScreenshot) androiddriver).getScreenshotAs(OutputType.BYTES);
 		//scenario.embed(screenshotBytes, "image/png");
-		 
+		    // Dismiss any Alerts before screenshot
+		    dismiss_alerts_android_Device(deviceno);
 	
 			Process p = null;
 			String screencap = null;
