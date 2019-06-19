@@ -115,7 +115,7 @@ public class TopUKsites_Android {
 	private static String Node_Path = "/usr/local/bin/node";
 	@SuppressWarnings("rawtypes")
 	AndroidDriver androiddriver;
-	int pageLoadTimeOut = 5;
+	int pageLoadTimeOut = 15;
 	WebDriverWait wait;
 	ChromeDriver driver = null;
 	int countrow = 0;
