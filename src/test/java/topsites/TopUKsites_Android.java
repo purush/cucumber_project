@@ -219,7 +219,7 @@ if(!apnname.contains("same"))
 		// select that element
 		WebElement apn_select_radio_button = explicitWait(By.xpath(choose_apn_xpath), androiddriver);
 		apn_select_radio_button.click();
-		//wait_sec(10);
+		wait_sec(5);
 		}
 else
 {
@@ -1807,7 +1807,7 @@ public static boolean linkExists(String URLName){
 		// androiddriver.closeApp();
 		// System.out.println("IAM HERE #########################" );
 		 try {
-			Thread.sleep(1);
+			Thread.sleep(10);
 			Appiumservice.stop();
 
 		} catch (InterruptedException e) {
