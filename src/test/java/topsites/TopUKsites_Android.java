@@ -129,7 +129,6 @@ public class TopUKsites_Android {
 
 		Appiumservice.start();
 		System.out.println(Appiumservice.getUrl());
-
 	}
 	
 	@Before("@nonmobile")
@@ -220,7 +219,7 @@ if(!apnname.contains("same"))
 		// select that element
 		WebElement apn_select_radio_button = explicitWait(By.xpath(choose_apn_xpath), androiddriver);
 		apn_select_radio_button.click();
-		wait_sec(10);
+		//wait_sec(10);
 		}
 else
 {
@@ -1808,7 +1807,7 @@ public static boolean linkExists(String URLName){
 		// androiddriver.closeApp();
 		// System.out.println("IAM HERE #########################" );
 		 try {
-			Thread.sleep(10);
+			Thread.sleep(1);
 			Appiumservice.stop();
 
 		} catch (InterruptedException e) {
