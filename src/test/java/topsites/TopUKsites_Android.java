@@ -220,8 +220,7 @@ public class TopUKsites_Android {
 		WebElement apn_select_radio_button = explicitWait(By.xpath(choose_apn_xpath), androiddriver);
 		apn_select_radio_button.click();
 		wait_sec(2);
-        androiddriver.close();
-
+		androiddriver.closeApp();
 		}
 		else
 		{	
@@ -650,7 +649,6 @@ public static boolean linkExists(String URLName){
 		capabilities.setCapability("udid", deviceSerialNoToUse);
 		capabilities.setCapability("browserName", MobileBrowserType.CHROME);
 		// MobileBrowserType
-
 		try {
 			androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
 		} catch (MalformedURLException e) {
