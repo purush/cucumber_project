@@ -187,7 +187,7 @@ public class TopUKsites_Android {
 if(!apnname.contains("same"))
 		{
     	deviceno = deviceSerialNoToUse;
-    	dismiss_alerts_android_Device(deviceno);
+    	//dismiss_alerts_android_Device(deviceno);
 		String access_point_xpath = "//android.widget.TextView[@text='Access Point Names']";
 		String choose_apn_xpath = "//android.widget.TextView[contains(@text,'" + apnname
 				+ "')]/../../android.widget.RadioButton";
@@ -223,7 +223,7 @@ if(!apnname.contains("same"))
 		}
 else
 {
-	dismiss_alerts_android_Device(deviceno);
+	//dismiss_alerts_android_Device(deviceno);
 
 }
 	}
@@ -929,7 +929,7 @@ public static boolean linkExists(String URLName){
 			}
 			screencap = "/Users/purush/Library/Android/sdk/platform-tools/adb -s " +  deviceno + " shell screencap -p /sdcard/screen.png ";
 	        System.out.println(" ##### screen cap comand  ##### "+ screencap);
-	        dismiss_alerts_android_Device(deviceno);
+	       // dismiss_alerts_android_Device(deviceno);
 	        
 	        try
 	        {

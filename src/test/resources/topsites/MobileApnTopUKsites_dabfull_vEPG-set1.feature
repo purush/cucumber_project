@@ -5,15 +5,14 @@ Feature: Using Android test APNs for vEPG
     And Using Android device serialno "2adbc704fc0d7ece" set apn "<apnname>"
     And Check mobile data connection for serialno "2adbc704fc0d7ece"
     And Using Android device serialno "2adbc704fc0d7ece" open "chrome" browser
+    And Dismiss Alerts Android device serialno "2adbc704fc0d7ece"
     And open browser and enter url "<url>" and check if page loaded and contains page title "<title>"
-    
 
     Examples: 
-      | apnname                                | url                      | title |
-      | ibrowse-full-vepg-vpgw-2               | http://xhaus.com/headers | xhaus |
+      | apnname                  | url                      | title |
+      | ibrowse-full-vepg-vpgw-2 | http://xhaus.com/headers | xhaus |
       | ibrowse-full-vepg-vpgw-2 | https://www.bbc.co.uk/   | bbc   |
-      | idata-full-vepg-vpgw-2                 | http://xhaus.com/headers | xhaus |
-      | idata-full-vepg-vpgw-2 | https://www.bbc.co.uk/   | bbc   |
-      | isetup-full-vepg-vpgw-2                | http://xhaus.com/headers | xhaus |
+      | idata-full-vepg-vpgw-2   | http://xhaus.com/headers | xhaus |
+      | idata-full-vepg-vpgw-2   | https://www.bbc.co.uk/   | bbc   |
+      | isetup-full-vepg-vpgw-2  | http://xhaus.com/headers | xhaus |
       | isetup-full-vepg-vpgw-2  | https://www.bbc.co.uk/   | bbc   |
-      
