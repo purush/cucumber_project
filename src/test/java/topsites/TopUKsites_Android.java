@@ -894,6 +894,9 @@ public static boolean linkExists(String URLName){
 	public void open_browser_and_enter_url_and_check_if_page_loaded_and_contains_page_title(String weburl,String title)
 	{
 				//String pageBodyHTML = null;
+				
+				String screencap = null;
+				Process p = null;
 
 			try
 			{
@@ -924,7 +927,26 @@ public static boolean linkExists(String URLName){
 				System.out.println(" Assertion Error when checking Page Title " + e.getMessage());
 	
 			}
-			
+			screencap = "/Users/purush/Library/Android/sdk/platform-tools/adb -s " +  deviceno + " shell screencap -p /sdcard/screen.png ";
+	        System.out.println(" ##### screen cap comand  ##### "+ screencap);
+	        dismiss_alerts_android_Device(deviceno);
+	        
+	        try
+	        {
+	        p = Runtime.getRuntime().exec(screencap);
+			p.waitFor();	
+			p.destroy();
+	        }
+	        catch ( Exception e)
+	    	{
+	    		if (p != null)
+	            {
+	                p.destroy();
+	                p = null;
+	            }
+	    	}	 
+	    	
+	    	  
 		     /*
 				try {
 					assertTrue(pageBodyHTML.toLowerCase().contains(title.toLowerCase()));
@@ -1734,10 +1756,10 @@ public static boolean linkExists(String URLName){
 		//byte[] screenshotBytes = ((TakesScreenshot) androiddriver).getScreenshotAs(OutputType.BYTES);
 		//scenario.embed(screenshotBytes, "image/png");
 		    // Dismiss any Alerts before screenshot
-		    dismiss_alerts_android_Device(deviceno);
+		  
 	
 			Process p = null;
-			String screencap = null;
+			//String screencap = null;
 			String copyfile = null;
 			String removefile = null;
 			
@@ -1750,8 +1772,8 @@ public static boolean linkExists(String URLName){
 	        filename = "./output/screendumpfile-"+timestamp;
 	        System.out.println(" ##### Image file name ##### "+ filename);
 
-			screencap = "/Users/purush/Library/Android/sdk/platform-tools/adb -s " +  deviceno + " shell screencap -p /sdcard/screen.png ";
-	        System.out.println(" ##### screen cap comand  ##### "+ screencap);
+			//screencap = "/Users/purush/Library/Android/sdk/platform-tools/adb -s " +  deviceno + " shell screencap -p /sdcard/screen.png ";
+	        //System.out.println(" ##### screen cap comand  ##### "+ screencap);
 
 			copyfile = "/Users/purush/Library/Android/sdk/platform-tools/adb -s " + deviceno +  " pull /sdcard/screen.png "+filename;
 	        System.out.println(" ##### screen copy comand  ##### "+ copyfile);
@@ -1766,9 +1788,7 @@ public static boolean linkExists(String URLName){
 	
 	try
 	{
-			p = Runtime.getRuntime().exec(screencap);
-			p.waitFor();	
-			p.destroy();
+			
 	
 			p = Runtime.getRuntime().exec(copyfile);
 			p.waitFor();
