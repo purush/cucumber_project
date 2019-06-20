@@ -891,9 +891,9 @@ public static boolean linkExists(String URLName){
 
 
 	@Given("^open browser and enter url \"(.*?)\" and check if page loaded and contains page title \"(.*?)\"$")
-	public void open_browser_and_enter_url_and_check_if_page_loaded_and_contains_page_title(String weburl,
-			String title) {
-		String pageBodyHTML = null;
+	public void open_browser_and_enter_url_and_check_if_page_loaded_and_contains_page_title(String weburl,String title)
+	{
+				//String pageBodyHTML = null;
 
 			try
 			{
@@ -903,15 +903,14 @@ public static boolean linkExists(String URLName){
 			catch ( Exception e)
 			{
 				System.out.println("####### Page Load Timeout ###### " + e.getMessage());
-			//	pageBodyHTML = androiddriver.findElement(By.tagName("body")).getText();
+				//pageBodyHTML = androiddriver.findElement(By.tagName("body")).getText();
 		    	String failed = "failed scenario ";
 				assertFalse(failed.contains("failed"));
 				return;
 		
 			}
-		//checkPageIsReady();
-		
-		//pageBodyHTML = androiddriver.findElement(By.tagName("body")).getText();
+			//checkPageIsReady();
+			//pageBodyHTML = androiddriver.findElement(By.tagName("body")).getText();
 
             String title_s = null;
             title_s = androiddriver.getTitle().toString();
@@ -919,20 +918,21 @@ public static boolean linkExists(String URLName){
          	System.out.println(" ########### Page Title ######## =  "+ androiddriver.getTitle().toString());
 
 		
-		try {
-			assertTrue(title_s.toLowerCase().contains(title.toLowerCase()));
-		} catch (Exception e) {
-			System.out.println(" Assertion Error when checking Page Title " + e.getMessage());
-
-		}
-     /*
-		try {
-			assertTrue(pageBodyHTML.toLowerCase().contains(title.toLowerCase()));
-		} catch (Exception e) {
-			System.out.println(" Assertion Error when checking Page contents contains " + title + " " + e.getMessage());
-
-		}
-	*/
+			try {
+				assertTrue(title_s.toLowerCase().contains(title.toLowerCase()));
+			} catch (Exception e) {
+				System.out.println(" Assertion Error when checking Page Title " + e.getMessage());
+	
+			}
+			
+		     /*
+				try {
+					assertTrue(pageBodyHTML.toLowerCase().contains(title.toLowerCase()));
+				} catch (Exception e) {
+					System.out.println(" Assertion Error when checking Page contents contains " + title + " " + e.getMessage());
+		
+				}
+			*/
 
 	}
 	
@@ -1807,7 +1807,7 @@ public static boolean linkExists(String URLName){
 		// androiddriver.closeApp();
 		// System.out.println("IAM HERE #########################" );
 		 try {
-			Thread.sleep(10);
+			Thread.sleep(30);
 			Appiumservice.stop();
 
 		} catch (InterruptedException e) {
