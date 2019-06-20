@@ -184,10 +184,10 @@ public class TopUKsites_Android {
 	@SuppressWarnings("rawtypes")
 	@Given("^Using Android device serialno \"(.*?)\" set apn \"(.*?)\"$")
 	public void using_Android_device_serialno_set_apn(String deviceSerialNoToUse, String apnname) {
-if(!apnname.contains("same"))
+        if(!apnname.contains("same"))
 		{
+    
     	deviceno = deviceSerialNoToUse;
-    	//dismiss_alerts_android_Device(deviceno);
 		String access_point_xpath = "//android.widget.TextView[@text='Access Point Names']";
 		String choose_apn_xpath = "//android.widget.TextView[contains(@text,'" + apnname
 				+ "')]/../../android.widget.RadioButton";
@@ -198,8 +198,9 @@ if(!apnname.contains("same"))
 		capabilities.setCapability("deviceName", deviceSerialNoToUse);
 		capabilities.setCapability("udid", deviceSerialNoToUse);
 		capabilities.setCapability("appPackage", "com.samsung.networkui");
-		//capabilities.setCapability("appActivity", "com.android.phone.MobileNetworkSettings");
 		capabilities.setCapability("appActivity", "com.samsung.networkui.MobileNetworkSettings");
+		capabilities.setCapability("browserName", MobileBrowserType.CHROME);
+
 		try {
 			androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
 		} catch (MalformedURLException e) {
@@ -219,13 +220,12 @@ if(!apnname.contains("same"))
 		// select that element
 		WebElement apn_select_radio_button = explicitWait(By.xpath(choose_apn_xpath), androiddriver);
 		apn_select_radio_button.click();
-		wait_sec(5);
+		wait_sec(2);
 		}
-else
-{
-	//dismiss_alerts_android_Device(deviceno);
-
-}
+		else
+		{	
+		//dismiss_alerts_android_Device(deviceno);
+		}
 	}
 	
 	
@@ -650,7 +650,6 @@ public static boolean linkExists(String URLName){
 		// MobileBrowserType
 
 		try {
-
 			androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
