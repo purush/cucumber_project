@@ -115,7 +115,7 @@ public class TopUKsites_Android {
 	private static String Node_Path = "/usr/local/bin/node";
 	@SuppressWarnings("rawtypes")
 	AndroidDriver androiddriver;
-	int pageLoadTimeOut = 15;
+	int pageLoadTimeOut = 10;
 	WebDriverWait wait;
 	ChromeDriver driver = null;
 	int countrow = 0;
@@ -625,27 +625,18 @@ public static boolean linkExists(String URLName){
 		capabilities.setCapability("udid", deviceSerialNoToUse);
 		capabilities.setCapability("browserName", MobileBrowserType.CHROME);
 		// MobileBrowserType
-		
-		//androiddriver.startActivity("com.android.chrome", "com.android.chrome.app.Main");
-
 		try {
-			androiddriver.startActivity("com.android.chrome", "com.android.chrome.app.Main");
-
-			//androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
+			androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
+		
 			try { // Try again ......
-				androiddriver.startActivity("com.android.chrome", "com.android.chrome.app.Main");
-
-//				androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
+				androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				//e1.printStackTrace();
+				System.out.println(" Error Exception = " + e1.getMessage());
+
 			}
 		}
 		androiddriver.manage().timeouts().implicitlyWait(pageLoadTimeOut, TimeUnit.SECONDS);
-
 	}
 
 	@Given("^Using Android device and serialno \"(.*?)\" dial MO Call$")
