@@ -141,7 +141,7 @@ public class TopUKsites_Android {
 
 	
 	@SuppressWarnings("rawtypes")
-	@Given("^Dismiss Alerts Android device serialno \"(.*?)\"$")
+	@Given("^Dismiss Android Alerts$")
 	public void dismiss_alerts_android_Device(String deviceSerialNoToUse) {
 
 		String button_ok = "//android.widget.Button[@text='OK']";		
@@ -160,6 +160,7 @@ public class TopUKsites_Android {
 	@SuppressWarnings("rawtypes")
 	@Given("^Using Android device serialno \"(.*?)\" set apn \"(.*?)\"$")
 	public void using_Android_device_serialno_set_apn(String deviceSerialNoToUse, String apnname) {
+	
         if(!apnname.contains("same"))
 		{
     
@@ -615,8 +616,9 @@ public static boolean linkExists(String URLName){
 	}
 
 	@SuppressWarnings("rawtypes")
-	@Given("^Using Android device serialno \"(.*?)\" open \"(.*?)\" browser$")
+	@Given("^Using Android device serialno \"(.*?)\" open chrome browser$")
 	public void using_Android_device_serial_no_open_browser(String deviceSerialNoToUse, String Browsertype) {
+	
     	deviceno = deviceSerialNoToUse;
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -866,7 +868,6 @@ public static boolean linkExists(String URLName){
 	@Given("^open browser and enter url \"(.*?)\" and check if page loaded and contains page title \"(.*?)\"$")
 	public void open_browser_and_enter_url_and_check_if_page_loaded_and_contains_page_title(String weburl,String title)
 	{
-				//String pageBodyHTML = null;
 			
 
 			try
@@ -877,15 +878,12 @@ public static boolean linkExists(String URLName){
 			catch ( Exception e)
 			{
 				System.out.println("####### Page Load Timeout ###### " + e.getMessage());
-				//pageBodyHTML = androiddriver.findElement(By.tagName("body")).getText();
 		    	String failed = "failed scenario ";
 				assertFalse(failed.contains("failed"));
 				return;
 		
 			}
-			//checkPageIsReady();
-			//pageBodyHTML = androiddriver.findElement(By.tagName("body")).getText();
-
+			
             String title_s = null;
             title_s = androiddriver.getTitle().toString();
          	System.out.println("/n");
@@ -900,14 +898,7 @@ public static boolean linkExists(String URLName){
 			}
 		
 	    	  
-		     /*
-				try {
-					assertTrue(pageBodyHTML.toLowerCase().contains(title.toLowerCase()));
-				} catch (Exception e) {
-					System.out.println(" Assertion Error when checking Page contents contains " + title + " " + e.getMessage());
-		
-				}
-			*/
+		 
 
 	}
 	
@@ -1706,9 +1697,6 @@ public static boolean linkExists(String URLName){
 	@After("@mobile")
 	public void test_clear_down(Scenario scenario) {
 
-		//byte[] screenshotBytes = ((TakesScreenshot) androiddriver).getScreenshotAs(OutputType.BYTES);
-		//scenario.embed(screenshotBytes, "image/png");
-		    // Dismiss any Alerts before screenshot
 		  
 	
 			Process p = null;
@@ -1777,11 +1765,13 @@ public static boolean linkExists(String URLName){
         }
 	}	 
 		 
-		// androiddriver.close();
-		// androiddriver.closeApp();
-		// System.out.println("IAM HERE #########################" );
+		
+
 		 try {
-			Thread.sleep(30);
+			 androiddriver.closeApp();
+			 androiddriver.close();
+		
+			Thread.sleep(2);
 			Appiumservice.stop();
 
 		} catch (InterruptedException e) {
