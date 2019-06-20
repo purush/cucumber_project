@@ -1768,8 +1768,8 @@ public static boolean linkExists(String URLName){
 		
 
 		 try {
-			 androiddriver.closeApp();
-			 androiddriver.close();
+			// androiddriver.closeApp();
+			// androiddriver.close();
 		
 			Thread.sleep(2);
 			Appiumservice.stop();
