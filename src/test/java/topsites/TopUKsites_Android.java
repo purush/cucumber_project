@@ -145,40 +145,16 @@ public class TopUKsites_Android {
 	public void dismiss_alerts_android_Device(String deviceSerialNoToUse) {
 
 		String button_ok = "//android.widget.Button[@text='OK']";		
-
-	/*	DesiredCapabilities capabilities = new DesiredCapabilities();
-
-		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("deviceName", deviceSerialNoToUse);
-		capabilities.setCapability("udid", deviceSerialNoToUse);
-		capabilities.setCapability("appPackage", "com.android.phone");
-		//capabilities.setCapability("appActivity", "com.android.phone.MobileNetworkSettings");
-
-		try {
-			androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			System.out.println(" Error Exception = " + e.getMessage());
-		}*/
-	
-		// androiddriver.manage().timeouts().implicitlyWait(pageLoadTimeOut,
-		// TimeUnit.SECONDS);
-
-		// Click OK button on Message 
-		
 		try 
 		{
 		
-		WebElement button_ok_click = explicitWait_5sec(By.xpath(button_ok), androiddriver);
+		WebElement button_ok_click = explicitWait_1sec(By.xpath(button_ok), androiddriver);
 		button_ok_click.click();
 
 		} catch( Exception e)
 		{
 		
 		}
-		
-	
-
 	}
 
 	@SuppressWarnings("rawtypes")
@@ -649,14 +625,21 @@ public static boolean linkExists(String URLName){
 		capabilities.setCapability("udid", deviceSerialNoToUse);
 		capabilities.setCapability("browserName", MobileBrowserType.CHROME);
 		// MobileBrowserType
+		
+		//androiddriver.startActivity("com.android.chrome", "com.android.chrome.app.Main");
+
 		try {
-			androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
-		} catch (MalformedURLException e) {
+			androiddriver.startActivity("com.android.chrome", "com.android.chrome.app.Main");
+
+			//androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 			try { // Try again ......
-				androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
-			} catch (MalformedURLException e1) {
+				androiddriver.startActivity("com.android.chrome", "com.android.chrome.app.Main");
+
+//				androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
+			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				//e1.printStackTrace();
 			}
@@ -1866,8 +1849,8 @@ public static boolean linkExists(String URLName){
 
 	}// wait
 
-	public WebElement explicitWait_5sec(By Byxpath, AndroidDriver driver) {
-		return (new WebDriverWait(driver, 5)).until(ExpectedConditions.elementToBeClickable(Byxpath));
+	public WebElement explicitWait_1sec(By Byxpath, AndroidDriver driver) {
+		return (new WebDriverWait(driver, 1)).until(ExpectedConditions.elementToBeClickable(Byxpath));
 
 	}//
 
