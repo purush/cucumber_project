@@ -616,7 +616,7 @@ public static boolean linkExists(String URLName){
 	}
 
 	@SuppressWarnings("rawtypes")
-	@Given("^Using Android device serialno \"(.*?)\" open chrome browser$")
+	@Given("^Using Android device serialno \"(.*?)\" open chrome$")
 	public void using_Android_device_serial_no_open_browser(String deviceSerialNoToUse, String Browsertype) {
 	
     	deviceno = deviceSerialNoToUse;
