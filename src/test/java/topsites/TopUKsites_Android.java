@@ -1751,9 +1751,9 @@ public static boolean linkExists(String URLName){
 			p.waitFor();
 			p.destroy();
 
-		//	p = Runtime.getRuntime().exec(remove_filefrom_system);
-		//	p.waitFor();
-		//	p.destroy();
+			p = Runtime.getRuntime().exec(removefile);
+			p.waitFor();
+			p.destroy();
 
 			
 	      BufferedImage bImage = ImageIO.read(new File(filename));
@@ -1762,9 +1762,9 @@ public static boolean linkExists(String URLName){
 	      byte [] data = bos.toByteArray();
 	      scenario.embed(data, "image/png");
 	      
-	      //p = Runtime.getRuntime().exec(remove_filefrom_system);
-		 // p.waitFor();
-		 // p.destroy();
+	      p = Runtime.getRuntime().exec(remove_filefrom_system);
+		  p.waitFor();
+		  p.destroy();
 
 	
 	}
