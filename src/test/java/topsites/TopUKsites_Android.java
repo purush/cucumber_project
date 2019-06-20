@@ -199,7 +199,7 @@ public class TopUKsites_Android {
 		capabilities.setCapability("udid", deviceSerialNoToUse);
 		capabilities.setCapability("appPackage", "com.samsung.networkui");
 		capabilities.setCapability("appActivity", "com.samsung.networkui.MobileNetworkSettings");
-		capabilities.setCapability("browserName", MobileBrowserType.CHROME);
+		//capabilities.setCapability("browserName", MobileBrowserType.CHROME);
 
 		try {
 			androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
