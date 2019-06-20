@@ -5,6 +5,7 @@ Feature: Using Android test APNs for vEPG
     And Using Android device serialno "2adbc704fc0d7ece" set apn "<apnname>"
     And Check mobile data connection for serialno "2adbc704fc0d7ece"
     And Dismiss Alerts Android device serialno "2adbc704fc0d7ece"
+    And Using Android device serialno "2adbc704fc0d7ece" open "chrome" browser
     And open browser and enter url "<url>" and check if page loaded and contains page title "<title>"
 
     Examples: 

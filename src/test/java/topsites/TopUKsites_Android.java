@@ -146,20 +146,20 @@ public class TopUKsites_Android {
 
 		String button_ok = "//android.widget.Button[@text='OK']";		
 
-		DesiredCapabilities capabilities = new DesiredCapabilities();
+	/*	DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("deviceName", deviceSerialNoToUse);
 		capabilities.setCapability("udid", deviceSerialNoToUse);
 		capabilities.setCapability("appPackage", "com.android.phone");
-		capabilities.setCapability("appActivity", "com.android.phone.MobileNetworkSettings");
+		//capabilities.setCapability("appActivity", "com.android.phone.MobileNetworkSettings");
 
 		try {
 			androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			System.out.println(" Error Exception = " + e.getMessage());
-		}
+		}*/
 	
 		// androiddriver.manage().timeouts().implicitlyWait(pageLoadTimeOut,
 		// TimeUnit.SECONDS);
@@ -199,7 +199,6 @@ public class TopUKsites_Android {
 		capabilities.setCapability("udid", deviceSerialNoToUse);
 		capabilities.setCapability("appPackage", "com.samsung.networkui");
 		capabilities.setCapability("appActivity", "com.samsung.networkui.MobileNetworkSettings");
-		//capabilities.setCapability("browserName", MobileBrowserType.CHROME);
 
 		try {
 			androiddriver = new AndroidDriver(new URL(Appiumservice.getUrl().toString()), capabilities);
@@ -221,11 +220,14 @@ public class TopUKsites_Android {
 		WebElement apn_select_radio_button = explicitWait(By.xpath(choose_apn_xpath), androiddriver);
 		apn_select_radio_button.click();
 		wait_sec(2);
+        androiddriver.close();
+
 		}
 		else
 		{	
 		//dismiss_alerts_android_Device(deviceno);
 		}
+        
 	}
 	
 	
