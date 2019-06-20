@@ -142,7 +142,7 @@ public class TopUKsites_Android {
 	
 	@SuppressWarnings("rawtypes")
 	@Given("^Dismiss Android Alerts$")
-	public void dismiss_alerts_android_Device(String deviceSerialNoToUse) {
+	public void dismiss_alerts_android_Device() {
 
 		String button_ok = "//android.widget.Button[@text='OK']";		
 		try 
