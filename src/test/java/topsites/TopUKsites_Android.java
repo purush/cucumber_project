@@ -1741,8 +1741,11 @@ public static boolean linkExists(String URLName){
 	
 	try
 	{
-			
 	
+			p = Runtime.getRuntime().exec(screencap);
+			p.waitFor();
+			p.destroy();
+
 			p = Runtime.getRuntime().exec(copyfile);
 			p.waitFor();
 			p.destroy();
@@ -1751,10 +1754,7 @@ public static boolean linkExists(String URLName){
 			p.waitFor();
 			p.destroy();
 
-			p = Runtime.getRuntime().exec(removefile);
-			p.waitFor();
-			p.destroy();
-
+		
 			
 	      BufferedImage bImage = ImageIO.read(new File(filename));
 	      ByteArrayOutputStream bos = new ByteArrayOutputStream();
